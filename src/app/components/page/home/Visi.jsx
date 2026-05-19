@@ -1,36 +1,59 @@
 import { Eye, Goal } from "lucide-react";
 
 export default function Visi() {
-    return (
-        <section className="w-full bg-slate-200 py-12 md:py-20">
-            <div className="container mx-auto max-w-6xl flex flex-col md:flex-row justify-center items-stretch gap-8 px-6">
-                <section className="w-full md:w-1/2 min-h-[20rem] md:min-h-[30rem] p-8 md:p-12 flex items-center justify-center">
-                    <div className="relative z-10 w-full">
-                        <h1 className="text-3xl md:text-4xl font-bold text-blue-500 mb-6 flex items-center gap-3">
-                            <Eye className="w-10 h-10" />
-                            <span>VISI</span>
-                        </h1>
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga molestiae quod dolores at excepturi? 
-                            Expedita eaque, ut unde accusantium eos fugit, eum iure eius voluptate laboriosam et nihil, 
-                            voluptatibus temporibus.
-                        </p>
-                    </div>
-                </section>
-                <section className="w-full md:w-1/2 min-h-[20rem] md:min-h-[30rem] p-8 md:p-12 flex items-center justify-center">
-                    <div className="relative z-10 w-full">
-                        <h1 className="text-3xl md:text-4xl font-bold text-blue-500 mb-6 flex items-center gap-3">
-                            <Goal className="w-10 h-10" />
-                            <span>MISI</span>
-                        </h1>
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga molestiae quod dolores at excepturi? 
-                            Expedita eaque, ut unde accusantium eos fugit, eum iure eius voluptate laboriosam et nihil, 
-                            voluptatibus temporibus.
-                        </p>
-                    </div>
-                </section>
+  return (
+    <section className="w-full bg-gradient-to-b from-slate-50 to-white py-16 md:py-24 relative overflow-hidden">
+      
+      {/* Decorative Background Glows */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none z-0" />
+
+      <div className="container mx-auto max-w-6xl relative z-10 px-6">
+        <div className="flex flex-col md:flex-row justify-center items-stretch gap-8">
+          
+          {/* Vision Card */}
+          <div className="w-full md:w-1/2 bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-3xl p-8 md:p-12 flex flex-col justify-between shadow-xl shadow-slate-200/30 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-blue-500/5 hover:border-blue-200/60 transition-all duration-300 ease-out group">
+            <div>
+              {/* Icon Wrapper */}
+              <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100/80 flex items-center justify-center text-blue-600 mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <Eye className="w-7 h-7" />
+              </div>
+              
+              {/* Heading */}
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-4 uppercase">
+                VISI
+              </h2>
+              
+              {/* Description */}
+              <p className="text-base text-slate-600 leading-relaxed font-normal">
+                To be the premier global provider of integrated gas turbine solutions and telemetry, 
+                driving industrial efficiency and sustainable energy innovation across the globe.
+              </p>
             </div>
-        </section>
-    );
+          </div>
+
+          {/* Mission Card */}
+          <div className="w-full md:w-1/2 bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-3xl p-8 md:p-12 flex flex-col justify-between shadow-xl shadow-slate-200/30 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-indigo-500/5 hover:border-indigo-200/60 transition-all duration-300 ease-out group">
+            <div>
+              {/* Icon Wrapper */}
+              <div className="w-14 h-14 rounded-2xl bg-indigo-50 border border-indigo-100/80 flex items-center justify-center text-indigo-600 mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <Goal className="w-7 h-7" />
+              </div>
+              
+              {/* Heading */}
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600 mb-4 uppercase">
+                MISI
+              </h2>
+              
+              {/* Description */}
+              <p className="text-base text-slate-600 leading-relaxed font-normal">
+                Delivering state-of-the-art engineering, precision maintenance, and real-time telemetry 
+                to maximize asset performance and operational reliability for our industrial partners.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
 }
