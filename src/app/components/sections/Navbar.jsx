@@ -54,10 +54,10 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`w-full sticky top-0 z-50 transition-all duration-300 ${
+    <nav className={`w-full sticky top-0 z-50 transition-[background-color,border-color,box-shadow] duration-300 py-3.5 ${
       isScrolled
-        ? "bg-white/90 backdrop-blur-md border-b border-zinc-200/50 shadow-md shadow-zinc-100/30 py-3"
-        : "bg-white/70 backdrop-blur-md border-b border-zinc-200/20 py-5"
+        ? "bg-white/90 backdrop-blur-md border-b border-zinc-200/50 shadow-md shadow-zinc-100/30"
+        : "bg-white/70 backdrop-blur-md border-b border-zinc-200/20 shadow-none"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
