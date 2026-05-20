@@ -18,7 +18,7 @@ export default function Navbar() {
 
   useEffect(() => {
     let frameId;
-    
+
     // Defer the setting of mounted to prevent synchronous state updates in the effect block
     frameId = requestAnimationFrame(() => {
       setMounted(true);
@@ -51,25 +51,25 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
+    { name: "News", href: "/news" },
   ];
 
   return (
-    <nav className={`w-full sticky top-0 z-50 transition-[background-color,border-color,box-shadow] duration-300 py-3.5 ${
-      isScrolled
+    <nav className={`w-full sticky top-0 z-50 transition-[background-color,border-color,box-shadow] duration-300 py-3.5 ${isScrolled
         ? "bg-white/90 backdrop-blur-md border-b border-zinc-200/50 shadow-md shadow-zinc-100/30"
         : "bg-white/70 backdrop-blur-md border-b border-zinc-200/20 shadow-none"
-    }`}>
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
-          
+
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="block hover:opacity-90 active:scale-95 transition-all">
-              <Image 
-                src="/images/Logo-Indoturbine-Baru-removebg-preview.png" 
-                alt="Indoturbine Logo" 
-                width={150} 
-                height={100} 
+              <Image
+                src="/images/Logo-Indoturbine-Baru-removebg-preview.png"
+                alt="Indoturbine Logo"
+                width={150}
+                height={100}
                 className="w-32 md:w-[145px] h-auto object-contain"
                 priority
               />
@@ -84,17 +84,15 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`relative py-2 text-sm font-semibold tracking-wide transition-colors duration-300 group ${
-                    isActive
+                  className={`relative py-2 text-sm font-semibold tracking-wide transition-colors duration-300 group ${isActive
                       ? "text-blue-600 font-bold"
                       : "text-zinc-600 hover:text-blue-600"
-                  }`}
+                    }`}
                 >
                   {link.name}
                   {/* Sliding Underline Micro-animation */}
-                  <span className={`absolute bottom-0 left-0 h-[2px] bg-blue-600 transition-all duration-300 ${
-                    isActive ? "w-full" : "w-0 group-hover:w-full"
-                  }`} />
+                  <span className={`absolute bottom-0 left-0 h-[2px] bg-blue-600 transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`} />
                 </Link>
               );
             })}
@@ -104,10 +102,10 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-5">
             {/* Search Pill */}
             <div className="relative group">
-              <input 
-                type="text" 
-                name="search" 
-                placeholder="Search..." 
+              <input
+                type="text"
+                name="search"
+                placeholder="Search..."
                 className="w-40 lg:w-48 bg-zinc-50 border border-zinc-200 text-zinc-800 placeholder:text-zinc-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 rounded-full px-4 py-1.5 pr-9 text-xs transition-all duration-300 shadow-sm"
               />
               <Search className="absolute right-3.5 top-1/2 transform -translate-y-1/2 w-3.5 h-3.5 text-zinc-400 group-focus-within:text-blue-500 transition-colors" />
@@ -149,7 +147,7 @@ export default function Navbar() {
 
                     {/* Navigation Items */}
                     <div className="py-1.5 space-y-0.5">
-                      <Link 
+                      <Link
                         href="/dashboard"
                         onClick={() => setIsProfileOpen(false)}
                         className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-zinc-700 hover:text-blue-600 hover:bg-zinc-50 rounded-xl transition-all"
@@ -161,7 +159,7 @@ export default function Navbar() {
 
                     {/* Footer Actions */}
                     <div className="pt-1.5 border-t border-zinc-100">
-                      <button 
+                      <button
                         onClick={async () => {
                           setIsProfileOpen(false);
                           await authClient.signOut();
@@ -177,8 +175,8 @@ export default function Navbar() {
                 )}
               </div>
             ) : (
-              <Link 
-                href="/login" 
+              <Link
+                href="/login"
                 className="inline-flex items-center gap-1.5 px-4.5 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold rounded-full shadow-md shadow-blue-500/10 hover:shadow-blue-500/20 active:scale-95 transition-all"
               >
                 <User className="w-3.5 h-3.5" />
@@ -192,8 +190,8 @@ export default function Navbar() {
             {!mounted || isPending ? (
               <div className="w-8 h-8 rounded-full bg-zinc-100 animate-pulse border border-zinc-200" />
             ) : session ? (
-              <Link 
-                href="/dashboard" 
+              <Link
+                href="/dashboard"
                 title="Go to Dashboard"
                 className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xs shadow-sm hover:scale-105 transition-transform"
               >
@@ -205,7 +203,7 @@ export default function Navbar() {
               </Link>
             )}
 
-            <button 
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-1.5 text-zinc-600 hover:text-blue-600 hover:bg-zinc-100 rounded-full transition-all focus:outline-none cursor-pointer"
             >
@@ -221,10 +219,10 @@ export default function Navbar() {
             <div className="flex flex-col gap-3 mt-4">
               {/* Mobile Search */}
               <div className="relative group mb-1">
-                <input 
-                  type="text" 
-                  name="search" 
-                  placeholder="Search..." 
+                <input
+                  type="text"
+                  name="search"
+                  placeholder="Search..."
                   className="w-full bg-zinc-50 border border-zinc-200 text-zinc-800 placeholder:text-zinc-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 rounded-full px-4 py-2 pr-9 text-xs transition-all duration-300"
                 />
                 <Search className="absolute right-3.5 top-1/2 transform -translate-y-1/2 w-4 h-4 text-zinc-400" />
@@ -234,15 +232,14 @@ export default function Navbar() {
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
-                  <Link 
-                    key={link.name} 
+                  <Link
+                    key={link.name}
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`px-3 py-2.5 text-sm font-semibold rounded-xl transition-all ${
-                      isActive 
-                        ? "text-blue-600 bg-blue-50/50 font-bold" 
+                    className={`px-3 py-2.5 text-sm font-semibold rounded-xl transition-all ${isActive
+                        ? "text-blue-600 bg-blue-50/50 font-bold"
                         : "text-zinc-600 hover:text-blue-600 hover:bg-zinc-50"
-                    }`}
+                      }`}
                   >
                     {link.name}
                   </Link>

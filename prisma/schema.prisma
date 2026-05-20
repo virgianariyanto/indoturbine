@@ -70,3 +70,20 @@ model Verification {
 
   @@map("verification")
 }
+
+model HeroSection {
+  id               String   @id @default("hero")
+  bgImageUrl       String
+  titlePart1       String
+  description      String
+  tag              String?
+  titlePart2       String?
+  primaryBtnText   String?
+  primaryBtnLink   String?
+  secondaryBtnText String?
+  secondaryBtnLink String?
+  updatedAt        DateTime @updatedAt
+
+  @@map("hero_section")
+}
+
