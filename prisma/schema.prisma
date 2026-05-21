@@ -87,3 +87,38 @@ model HeroSection {
   @@map("hero_section")
 }
 
+model VisiMisiSection {
+  id           String   @id @default("visimisi")
+  visionTitle  String   @default("VISI")
+  visionText   String
+  missionTitle String   @default("MISI")
+  missionText  String
+  updatedAt    DateTime @updatedAt
+
+  @@map("visi_misi_section")
+}
+
+model CoreValueSection {
+  id          String          @id @default("corevalues")
+  badge       String          @default("Our Foundation")
+  title       String          @default("Core Values")
+  description String          @default("The driving principles that guide our engineering precision, telemetry accuracy, and commitment to service quality.")
+  items       CoreValueItem[]
+  updatedAt   DateTime        @updatedAt
+
+  @@map("core_value_section")
+}
+
+model CoreValueItem {
+  id          String           @id @default(cuid())
+  icon        String           @default("Lightbulb")
+  title       String
+  description String
+  order       Int              @default(0)
+  sectionId   String           @default("corevalues")
+  section     CoreValueSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+
+  @@map("core_value_item")
+}
+
+

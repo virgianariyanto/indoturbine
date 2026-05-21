@@ -1,6 +1,11 @@
 import { Eye, Goal } from "lucide-react";
 
-export default function Visi() {
+export default function Visi({ data }) {
+  const visionTitle = data?.visionTitle || "VISI";
+  const visionText = data?.visionText || "To be the premier global provider of integrated gas turbine solutions and telemetry, driving industrial efficiency and sustainable energy innovation across the globe.";
+  const missionTitle = data?.missionTitle || "MISI";
+  const missionText = data?.missionText || "Delivering state-of-the-art engineering, precision maintenance, and real-time telemetry to maximize asset performance and operational reliability for our industrial partners.";
+
   return (
     <section className="w-full bg-gradient-to-b from-slate-50 to-white py-16 md:py-24 relative overflow-hidden">
       
@@ -20,13 +25,12 @@ export default function Visi() {
               
               {/* Heading */}
               <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-4 uppercase">
-                VISI
+                {visionTitle}
               </h2>
               
               {/* Description */}
               <p className="text-base text-slate-600 leading-relaxed font-normal">
-                To be the premier global provider of integrated gas turbine solutions and telemetry, 
-                driving industrial efficiency and sustainable energy innovation across the globe.
+                {visionText}
               </p>
             </div>
           </div>
@@ -41,13 +45,12 @@ export default function Visi() {
               
               {/* Heading */}
               <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600 mb-4 uppercase">
-                MISI
+                {missionTitle}
               </h2>
               
               {/* Description */}
               <p className="text-base text-slate-600 leading-relaxed font-normal">
-                Delivering state-of-the-art engineering, precision maintenance, and real-time telemetry 
-                to maximize asset performance and operational reliability for our industrial partners.
+                {missionText}
               </p>
             </div>
           </div>
@@ -57,3 +60,4 @@ export default function Visi() {
     </section>
   );
 }
+
