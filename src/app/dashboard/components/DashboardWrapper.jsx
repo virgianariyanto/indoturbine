@@ -16,7 +16,8 @@ import {
   Home,
   Sparkles,
   Eye,
-  Award
+  Award,
+  Milestone
 } from "lucide-react";
 
 export default function DashboardWrapper({ children, user }) {
@@ -27,6 +28,7 @@ export default function DashboardWrapper({ children, user }) {
     { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
     { name: "Visi & Misi", href: "/dashboard/visi-misi", icon: Eye },
     { name: "Core Values", href: "/dashboard/core-values", icon: Award },
+    { name: "History & Milestones", href: "/dashboard/history", icon: Milestone },
     { name: "Settings", href: "/dashboard/settings", icon: Settings },
   ];
 

@@ -121,4 +121,41 @@ model CoreValueItem {
   @@map("core_value_item")
 }
 
+model HistorySection {
+  id          String             @id @default("history")
+  badge       String             @default("Our Journey")
+  title       String             @default("History & Milestones")
+  description String             @default("Over five decades of powering industrial operations, scaling our services, and pioneering telemetry solutions.")
+  items       HistoryMilestone[]
+  updatedAt   DateTime           @updatedAt
+
+  @@map("history_section")
+}
+
+model HistoryMilestone {
+  id          String         @id @default(cuid())
+  icon        String         @default("Milestone")
+  year        String
+  description String
+  order       Int            @default(0)
+  sectionId   String         @default("history")
+  section     HistorySection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+
+  @@map("history_milestone")
+}
+
+// 🎯 New model to store contact form submissions
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  company   String?  // optional
+  email     String
+  phone     String?  // optional
+  message   String
+  createdAt DateTime @default(now())
+
+  @@map("contact_message")
+}
+
+
 

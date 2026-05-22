@@ -74,11 +74,12 @@ export default function Contact() {
           {/* Right Side: Glassmorphism Form Card */}
           <div className="w-full lg:w-1/2 flex items-center">
             <div className="w-full bg-white/5 backdrop-blur-xl p-8 md:p-10 rounded-3xl border border-white/10 shadow-2xl relative">
-              <form action="" className="flex flex-col">
+              <form action="/api/contact" method="POST" className="flex flex-col">
                 <div className="flex gap-2 flex-col mb-6">
                   <label htmlFor="nama" className="text-[10px] sm:text-xs font-bold text-slate-300 uppercase tracking-widest ml-1">Full Name</label>
                   <input 
                     id="nama"
+                    name="name"
                     type="text" 
                     placeholder="Enter your full name"
                     className="w-full p-3.5 rounded-xl bg-slate-900/60 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-all duration-300"
@@ -88,6 +89,7 @@ export default function Contact() {
                   <label htmlFor="company" className="text-[10px] sm:text-xs font-bold text-slate-300 uppercase tracking-widest ml-1">Company / Institution</label>
                   <input 
                     id="company"
+                    name="company"
                     type="text" 
                     placeholder="Your company name"
                     className="w-full p-3.5 rounded-xl bg-slate-900/60 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-all duration-300"
@@ -97,6 +99,7 @@ export default function Contact() {
                   <label htmlFor="email" className="text-[10px] sm:text-xs font-bold text-slate-300 uppercase tracking-widest ml-1">Email Address</label>
                   <input 
                     id="email"
+                    name="email"
                     type="email" 
                     placeholder="example@email.com"
                     className="w-full p-3.5 rounded-xl bg-slate-900/60 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-all duration-300"
@@ -106,6 +109,7 @@ export default function Contact() {
                   <label htmlFor="phone" className="text-[10px] sm:text-xs font-bold text-slate-300 uppercase tracking-widest ml-1">Phone Number</label>
                   <input 
                     id="phone"
+                    name="phone"
                     type="tel" 
                     placeholder="+62 ..."
                     className="w-full p-3.5 rounded-xl bg-slate-900/60 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-all duration-300"
@@ -122,7 +126,7 @@ export default function Contact() {
                   ></textarea>
                 </div>
                 <div className="flex justify-end">
-                  <Button text="Send Message" className="w-full md:w-auto" />
+                  <Button text="Send Message" className="w-full md:w-auto" type="submit" />
                 </div>
               </form>
             </div>
